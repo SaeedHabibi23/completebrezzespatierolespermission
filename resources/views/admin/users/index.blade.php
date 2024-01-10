@@ -57,7 +57,7 @@
                                                 <td><strong>{{$user->email}}</strong></td>
                                                 <td>
 													<div class="d-flex">
-                                                        <a href=""  class="btn btn-primary shadow btn-sm me-1">Roles</a>
+                                                        <a href="{{ route('admin.user.show', $user->id) }}"  class="btn btn-primary shadow btn-sm me-1">Roles</a>
                                                         <a href=""  class="btn btn-primary shadow btn-sm me-1">Permissions</a>
 
                                                         <form class="me-5" action="{{ route('admin.user.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Are You Sure')">

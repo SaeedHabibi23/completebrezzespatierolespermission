@@ -26,16 +26,10 @@
                     <div class="col-xl-8 col-lg-8">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Role Edit</h4>
+                                <h4 class="card-title">  Name: {{ $user->name }}  Email: {{ $user->email }} </h4>
                             </div>
                             <div class="card-body">
-                                <div class="basic-form">
-                                    {{ $user->name }}
-                                </div>
-                                <div class="basic-form">
-                                    {{ $user->email }}
-                                </div>
-                            </div>
+                           
                             <div class="p-4">
                                 <div>
                                     <h3> Roles  </h3>
@@ -72,13 +66,14 @@
                                         <button type="submit" class="btn btn-success"> Assign </button>
                                     </div>
                                 </form>
-                            </div>
-                        </div>
 
 
 
 
-                        <div class="p-4">
+
+
+                                
+                        <div class="mt-5">
                             <div>
                                 <h3>  Permission </h3>
                             </div>
@@ -102,7 +97,7 @@
                                 @csrf
                                 <div class="mb-3">
                                     <select class="form-control" name="permission">
-                                        @foreach ($Permissions as $permission)
+                                        @foreach ($permissions as $permission)
                                         <option value="{{ $permission->name }}" @if($user->hasPermissionTo($permission->name)) selected @endif> {{ $permission->name }} </option>
                                         @endforeach
                                     </select>
@@ -114,6 +109,15 @@
                                     <button type="submit" class="btn btn-success"> Assign </button>
                                 </div>
                             </form>
+
+
+
+                            </div>
+                        </div>
+
+
+
+
 					
                       
 				    
